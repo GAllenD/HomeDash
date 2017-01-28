@@ -3,15 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace HomeDash.External.Service
 {
     public class WallyHomeService
     {
-
-        public async Task<SensorsResponse>  GetSensorData(string Url)
+        public async Task<SensorsResponse>  GetSensorDataAsync(string Url)
         {
             SensorsResponse _response = null;
 

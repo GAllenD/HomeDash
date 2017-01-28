@@ -114,6 +114,13 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <None Include="Web.config.example" />
+    <None Include="Web.config.Debug.example">
+      <DependentUpon>Web.config.example</DependentUpon>
+    </None>
+    <None Include="Web.config.Release.example">
+      <DependentUpon>Web.config.example</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

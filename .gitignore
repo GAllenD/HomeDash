@@ -274,5 +274,6 @@ __pycache__/
 # tools/**
 # !tools/packages.config
 
-# Private Config
+# Private Config  (example files include in repo)
 Web.config
+App.config
