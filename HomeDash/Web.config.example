@@ -10,7 +10,10 @@
     <add key="PreserveLoginUrl" value="true" />
     <add key="ClientValidationEnabled" value="true" />
     <add key="UnobtrusiveJavaScriptEnabled" value="true" />
-    <add key="WallyHomeServiceUrl" value="?"/>
+    <add key="WallyHomeServiceUrl" value="?" />
+    <add key="WallyAuthorization" value="?" />
+    <add key ="HueIpAddres" value="?"/>
+    <add key ="HueAppKey" value="?"/>
   </appSettings>
   <system.web>
     <compilation debug="true" targetFramework="4.6.1" />

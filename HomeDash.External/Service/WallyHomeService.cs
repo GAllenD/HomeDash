@@ -8,7 +8,7 @@ namespace HomeDash.External.Service
 {
     public class WallyHomeService
     {
-        public async Task<List<SensorsResponse>>  GetSensorDataAsync(string Url, string authToken)
+        public async Task<List<SensorsResponse>>  GetSensorsDataAsync(string Url, string authToken)
         {
             List<SensorsResponse> _response = null;
 
@@ -25,7 +25,6 @@ namespace HomeDash.External.Service
                     _response = JsonConvert.DeserializeObject<List<SensorsResponse>>(serviceResponse);
                 }
             }
-
 
             return _response;
         }

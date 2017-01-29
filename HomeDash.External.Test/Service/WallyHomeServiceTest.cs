@@ -22,7 +22,7 @@ namespace HomeDash.External.Test.Service
             var serviceUrl = ConfigurationManager.AppSettings["WallyHomeServiceUrl"];
             var serviceAuth = ConfigurationManager.AppSettings["WallyAuthorization"];
 
-            var response =  wallyService.GetSensorDataAsync(serviceUrl, serviceAuth);
+            var response =  wallyService.GetSensorsDataAsync(serviceUrl, serviceAuth);
 
             var serviceResponse = response.Result;
 
