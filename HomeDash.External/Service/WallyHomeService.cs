@@ -1,28 +1,28 @@
 ﻿using HomeDash.External.Model.WallyHome;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace HomeDash.External.Service
 {
     public class WallyHomeService
     {
-        public async Task<SensorsResponse>  GetSensorDataAsync(string Url)
+        public async Task<List<SensorsResponse>>  GetSensorDataAsync(string Url, string authToken)
         {
-            SensorsResponse _response = null;
+            List<SensorsResponse> _response = null;
 
             using (var client = new HttpClient())
             {
-                //client.BaseAddress = new Uri(GetServiceUri());
-                //client.DefaultRequestHeaders.Accept.Clear();
-                //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Add("Authorization", authToken);
 
                 var response = await client.GetAsync(Url);
+
                 if (response.IsSuccessStatusCode)
                 {
-                    var r = response.Content;
+                    var serviceResponse = response.Content.ReadAsStringAsync().Result;
+
+                    _response = JsonConvert.DeserializeObject<List<SensorsResponse>>(serviceResponse);
                 }
             }
 
