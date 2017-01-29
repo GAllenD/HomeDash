@@ -4,6 +4,11 @@ using System.Text;
 
 namespace HomeDash.External.Model.WallyHome
 {
+    public class WallyHomeSensorResponse
+    {
+        public SensorsResponse[] Sensors { get; set; }
+    }
+
     public class SensorsResponse
     {
         public string snid { get; set; }
@@ -51,7 +56,7 @@ namespace HomeDash.External.Model.WallyHome
 
     public class RH
     {
-        public int max { get; set; }
+        public double max { get; set; }
     }
 
     public class Contactthresholds

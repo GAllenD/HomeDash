@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Should;
 
 namespace HomeDash.External.Test.Service
 {
@@ -19,8 +20,15 @@ namespace HomeDash.External.Test.Service
             var wallyService = new WallyHomeService();
 
             var serviceUrl = ConfigurationManager.AppSettings["WallyHomeServiceUrl"];
+            var serviceAuth = ConfigurationManager.AppSettings["WallyAuthorization"];
 
-            var response =  wallyService.GetSensorDataAsync(serviceUrl);
+            var response =  wallyService.GetSensorDataAsync(serviceUrl, serviceAuth);
+
+            var serviceResponse = response.Result;
+
+            serviceResponse.Count.ShouldEqual(2);
+            serviceResponse[0].location.appliance.ShouldNotBeEmpty();
+            serviceResponse[1].location.appliance.ShouldNotBeEmpty();
         }
     }
 }
