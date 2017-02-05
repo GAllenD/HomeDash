@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Should;
 
 namespace HomeDash.External.Test.Service
 {
@@ -26,7 +27,15 @@ namespace HomeDash.External.Test.Service
         [Test]
         public void ShouldTurnLightOn()
         {
-            _service.TurnSingleLightOn("6");
+            _service.TurnSingleLightOnAsync("6");
+        }
+
+        [Test]
+        public void ShouldGetListOfLights()
+        {
+            var lightCount = _service.GetLights().Count();
+            lightCount.ShouldBeGreaterThan(1);
+            TestContext.WriteLine("Light Count is: " + lightCount);
         }
     }
 }

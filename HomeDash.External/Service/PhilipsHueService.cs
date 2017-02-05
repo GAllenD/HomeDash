@@ -18,24 +18,24 @@ namespace HomeDash.External.Service
             client.Initialize(appKey);
         }
         
-        public void GetSingleLight()
+        public async void GetSingleLightAsync()
         {
-            client.SendCommandAsync(PhilipsHueServiceHelper.GetOnCommand(), new List<string> {"6" });
+            await client.SendCommandAsync(PhilipsHueServiceHelper.GetOnCommand(), new List<string> {"6" });
         }
 
-        public void GetLights()
+        public List<Light> GetLights()
         {
-
+            return client.GetLightsAsync().Result.ToList();
         }
-        
+
         public void TurnAllLightsOn()
         {
 
         }
 
-        public void TurnSingleLightOn(string lightId)
+        public async void TurnSingleLightOnAsync(string lightId)
         {
-            client.SendCommandAsync(PhilipsHueServiceHelper.GetOnCommand(), new List<string> { lightId });
+             await client.SendCommandAsync(PhilipsHueServiceHelper.GetOnCommand(), new List<string> { lightId });
         }
     }
 }
