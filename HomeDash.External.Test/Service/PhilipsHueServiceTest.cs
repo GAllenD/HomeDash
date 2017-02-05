@@ -37,5 +37,13 @@ namespace HomeDash.External.Test.Service
             lightCount.ShouldBeGreaterThan(1);
             TestContext.WriteLine("Light Count is: " + lightCount);
         }
+
+        [Test]
+        public void ShouldGetListOfGroups()
+        {
+            var groupCound = _service.GetGroups().Count();
+            groupCound.ShouldBeGreaterThan(1);
+            TestContext.WriteLine("Group Count is: " + groupCound);
+        }
     }
 }
