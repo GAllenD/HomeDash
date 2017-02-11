@@ -64,6 +64,7 @@
     <Compile Include="Helpers\PhilipsHueServiceHelper.cs" />
     <Compile Include="Model\WallyHome\SensorsResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\EcobeeService.cs" />
     <Compile Include="Service\PhilipsHueService.cs" />
     <Compile Include="Service\WallyHomeService.cs" />
   </ItemGroup>

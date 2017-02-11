@@ -14,6 +14,8 @@
     <add key="WallyAuthorization" value="?" />
     <add key ="HueIpAddres" value="?"/>
     <add key ="HueAppKey" value="?"/>
+    <add key="EcoBeeApiKey" value="?"/>
+    <add key="EcoBeeRefreshToken" value="?"/>
   </appSettings>
   <system.web>
     <compilation debug="true" targetFramework="4.6.1" />
