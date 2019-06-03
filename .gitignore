@@ -277,3 +277,5 @@ __pycache__/
 # Private Config  (example files include in repo)
 Web.config
 App.config
+HomeDash/Web.config.Debug
+HomeDash/Web.config.Release
